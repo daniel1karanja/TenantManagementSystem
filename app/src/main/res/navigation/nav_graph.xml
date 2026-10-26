@@ -3,31 +3,50 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/dashboardFragment">
 
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.tenantmanagementsystem.HomeFragment"
-        android:label="Home">
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.tenantmanagementsystem.DashboardFragment"
+        android:label="Dashboard">
 
         <action
-            android:id="@+id/action_home_to_details"
-            app:destination="@id/detailsFragment" />
+            android:id="@+id/action_dashboardFragment_to_addTenantFragment"
+            app:destination="@id/addTenantFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
 
         <action
-            android:id="@+id/action_home_to_settings"
-            app:destination="@id/settingsFragment" />
+            android:id="@+id/action_dashboardFragment_to_viewTenantsFragment"
+            app:destination="@id/viewTenantsFragment" />
 
     </fragment>
 
     <fragment
-        android:id="@+id/detailsFragment"
-        android:name="com.example.tenantmanagementsystem.DetailsFragment"
-        android:label="Details" />
+        android:id="@+id/addTenantFragment"
+        android:name="com.example.tenantmanagementsystem.AddTenantFragment"
+        android:label="Add Tenant">
+
+        <action
+            android:id="@+id/action_addTenantFragment_to_viewTenantsFragment"
+            app:destination="@id/viewTenantsFragment"
+            app:popUpTo="@id/dashboardFragment" />
+
+    </fragment>
 
     <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.example.tenantmanagementsystem.SettingsFragment"
-        android:label="Settings" />
+        android:id="@+id/viewTenantsFragment"
+        android:name="com.example.tenantmanagementsystem.ViewTenantsFragment"
+        android:label="View Tenants">
+
+        <argument
+            android:name="newTenant"
+            app:argType="com.example.tenantmanagementsystem.Tenant"
+            app:nullable="true"
+            android:defaultValue="@null" />
+
+    </fragment>
 
 </navigation>

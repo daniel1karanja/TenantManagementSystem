@@ -1,0 +1,40 @@
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VIEW TENANTS"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <TextView
+            android:id="@+id/allTenantsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No tenants yet."
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/callTenantButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CALL TENANT"
+            android:layout_marginTop="24dp" />
+
+
+    </LinearLayout>
+
+</ScrollView>
